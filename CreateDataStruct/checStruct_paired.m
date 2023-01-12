@@ -3,7 +3,7 @@
 
 function [samplesStruct] = checStruct_paired(path,checOrMNase)
 
-GP = load('CreateDataStruct\general_params_130711.mat');
+GP = load('GeneralStructs\general_params_130711.mat');
 
 chr_length = GP.chr_len;
 %chr_length(17)  = 85779; %This is mitochondria
