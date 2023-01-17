@@ -43,7 +43,6 @@ T = readtable('Tables/tableS1.xlsx');
 all_TFs = T.GeneName(T.ChEC_Profile == 1);
 all_TFs(strcmpi(all_TFs,'CAD1')) = {'YAP2'}; %rename the TF
 all_TFs(strcmpi(all_TFs,'CIN5')) = {'YAP4'};
-all_TFs(strcmpi(all_TFs,'NFI1')) = []; % Not real TF
 all_TFs(strcmpi(all_TFs,'MSN2')) = []; 
 
 Msn2_sumProm = labWTs.sum_over_promoter.Msn2';
