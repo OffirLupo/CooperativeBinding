@@ -8,7 +8,8 @@ and normalize the data for read count.
 second step is averaging repeats using the function mean_of_repeats2.m.
 
 **These norm files (average of repeats) are also found in the folder normMatFiles**
-genomic tracks (normalized for read count) are found in this repository and can be loaded directly using the function loadMatFiles.m
+genomic tracks (normalized for read count) are found in this repository and can be loaded directly using the function loadMatFiles.m.
+
 save this combined mat struct in a subfolder (e.g, Data_structs/checData.mat)
 
 Several functions in this repository, e.g., cbrewer.m and  joyPlot.m were taken from Matlab File Exchange. 
