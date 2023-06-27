@@ -78,33 +78,29 @@ gname(all_TFs(r),b)
 
 
 %% Figure 1C - plot example scatter plots  
-TF_toPlot = {'Tda9','Crz1','Hsf1'};
 
-figure
-for i = 1:length(TF_toPlot)
-    
-    subplot(1,length(TF_toPlot),i)
-    xData = chec_struct_med.sum_over_promoter.Msn2;
-    yData = chec_struct_med.sum_over_promoter.(TF_toPlot{i});
-    cData = chec_struct_med.sum_over_promoter.Gal11;  
-    scatter(xData,yData,20,cData,'filled','MarkerEdgeColor','k','LineWidth',0.1)
-    corrVal = round(corr(xData',yData','type','pearson'),2);
-    yl = ylim;
-    xl = xlim;
-    text(xl(2)-10000,yl(2)-100,['R= ',num2str(corrVal)],'fontsize',12)
-    axis square
-    xlabel('Msn2')
-    ylabel(TF_toPlot{i})
-    set(gca,'FontSize',12)
-   caxis([0 40000])
-   set(gca,'fontsize',12)
-
+all_sumProm = zeros(6701,length(all_TFs));
+for i = 1:length(all_TFs)
+    curr_tf = [upper(all_TFs{i}(1)),lower(all_TFs{i}(2:end))];
+    all_sumProm(:,i) = labWTs.sum_over_promoter.(curr_tf)';
 end
 
-cb = colorbar;
-cb.Label.String = 'Med15';
-colormap(cm_YlGn)
+corMat = corr(all_sumProm,'rows','pairwise');
+Y = pdist(corMat);
+Z = linkage(Y,'average');
+[~,~,Idx] = dendrogram(Z,0);
+
+figure;
+subplot(2,2,[1,3])
+imagesc(corMat(Idx,Idx))
+axis square
+set(gca,'ytick',1:length(all_TFs),'yticklabel',all_TFs(Idx))
+set(gca,'xtick',1:length(all_TFs),'xticklabel',all_TFs(Idx))
+axis square
+caxis([0 1])
+cb = colorbar('Location','southoutside','Position',[0.1304    0.1194    0.3339    0.0445]);
 set(gcf,'color','w')
+title('correlation of promoter binding preference);
 
 
 %% Figure 1D - plot the length of the IDR for all TFs
