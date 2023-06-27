@@ -9,7 +9,7 @@ and normalize the data for read count.
 second step is averaging repeats using the function mean_of_repeats2.m.
 
 **These norm files (average of repeats) are also found in folders normFiles and WT_normFiles:**
-
+norm files need to be unzipped
 genomic tracks (normalized for total read count) are found in this repository and can be loaded directly using the function loadMatFiles.m.
 save this combined mat struct in a subfolder (e.g, Data_structs/checData.mat)
 **.out files of MNase-seq data should be downloaded directly from the GEO repository**
