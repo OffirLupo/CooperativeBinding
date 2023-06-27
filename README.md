@@ -19,4 +19,7 @@ We thank the authors for sharing these files with the community, and ask them to
 
 For any comments/questions, please contact (offirlupo1@gmail.com) 
 
+latest update:
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8086338.svg)](https://doi.org/10.5281/zenodo.8086338)
+
 Last update: 27/06/2023
