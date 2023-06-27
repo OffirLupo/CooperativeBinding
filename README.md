@@ -17,6 +17,6 @@ save this combined mat struct in a subfolder (e.g, Data_structs/checData.mat)
 Several functions in this repository, e.g., cbrewer.m and  joyPlot.m were taken from Matlab File Exchange. 
 We thank the authors for sharing these files with the community, and ask them to contact if there are any issues with including those files in our repository. 
 
-If experiencing any issues, or have any other comments/question, please contact (offirlupo1@gmail.com) 
+For any comments/questions, please contact (offirlupo1@gmail.com) 
 
-Last update: 15/05/2023
+Last update: 27/06/2023
